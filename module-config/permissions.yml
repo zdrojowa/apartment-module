@@ -1,0 +1,8 @@
+add:
+  name: Dodawanie
+edit:
+  name: Edytowanie
+delete:
+  name: Usuwanie
+import:
+  name: Import

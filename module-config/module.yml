@@ -1,0 +1,7 @@
+name: ApartmentModule
+version: 1.0.0
+
+aclAnchor: ApartmentModule
+aclName: Sprzedaż Apartamentów
+
+routePrefix: ApartmentModule

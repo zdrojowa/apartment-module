@@ -1,0 +1,64 @@
+apartments:
+  path: /dashboard/apartments
+  controller: Selene\Modules\ApartmentModule\Http\Controllers\ApartmentController@index
+  methods:
+    - GET
+  permission: ApartmentModule
+
+apartments.ajax:
+  path: /dashboard/apartments/ajax
+  controller: Selene\Modules\ApartmentModule\Http\Controllers\ApartmentController@ajax
+  methods:
+    - POST
+  permission: ApartmentModule
+
+apartments.create:
+  path: /dashboard/apartments/create
+  controller: Selene\Modules\ApartmentModule\Http\Controllers\ApartmentController@create
+  methods:
+    - GET
+  permission: ApartmentModule.add
+
+apartments.store:
+  path: /dashboard/apartments
+  controller: Selene\Modules\ApartmentModule\Http\Controllers\ApartmentController@store
+  methods:
+    - POST
+  permission: ApartmentModule.add
+
+apartments.edit:
+  path: /dashboard/apartments/{{apartment}}/edit
+  controller: Selene\Modules\ApartmentModule\Http\Controllers\ApartmentController@edit
+  methods:
+    - GET
+  permission: ApartmentModule.edit
+
+apartments.update:
+  path: /dashboard/apartments/{{apartment}}
+  controller: Selene\Modules\ApartmentModule\Http\Controllers\ApartmentController@update
+  methods:
+    - PUT
+    - PATCH
+  permission: ApartmentModule.edit
+
+apartments.destroy:
+  path: /dashboard/apartments/{{apartment}}
+  controller: Selene\Modules\ApartmentModule\Http\Controllers\ApartmentController@destroy
+  methods:
+    - DELETE
+  permission: ApartmentModule.delete
+
+apartments.import:
+  path: /dashboard/apartments/import
+  controller: Selene\Modules\ApartmentModule\Http\Controllers\ApartmentController@import
+  methods:
+    - GET
+  permission: ApartmentModule.import
+
+apartments.import.store:
+  path: /dashboard/apartments/import
+  controller: Selene\Modules\ApartmentModule\Http\Controllers\ApartmentController@importStore
+  methods:
+    - POST
+  permission: ApartmentModule.import
+

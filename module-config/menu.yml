@@ -1,0 +1,17 @@
+apartments:
+  name: Apartamenty
+  icon: mdi mdi-home-city
+  permission: ApartmentModule
+  children:
+    list:
+      name: Lista
+      permission: ApartmentModule
+      route: ApartmentModule::apartments
+    add:
+      name: Dodaj
+      permission: ApartmentModule.add
+      route: ApartmentModule::apartments.create
+    import:
+      name: Import
+      permission: ApartmentModule.import
+      route: ApartmentModule::apartments.import

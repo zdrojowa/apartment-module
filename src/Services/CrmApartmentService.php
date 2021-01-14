@@ -51,10 +51,10 @@ class CrmApartmentService
             $apartment->rooms_count = $local->rooms;
             $apartment->area = $local->surface;
             $apartment->terrace_area = $local->terrace_surface;
-            if ($local->status === 3) {
-                $apartment->status = 'sold';
-            } elseif ($local->status === 2) {
+            if ($local->is_reserved || $local->status === 2) {
                 $apartment->status = 'reserved';
+            } elseif ($local->status === 3) {
+                $apartment->status = 'sold';
             } else {
                 $apartment->status = 'available';
             }

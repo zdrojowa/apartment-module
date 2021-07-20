@@ -13,8 +13,8 @@ use Selene\Modules\ApartmentModule\ApartmentModule;
 use Selene\Modules\ApartmentModule\Http\Requests\ApartmentStoreRequest;
 use Selene\Modules\ApartmentModule\Http\Requests\ApartmentUpdateRequest;
 use Selene\Modules\ApartmentModule\Models\Apartment;
-use Selene\modules\ApartmentModule\src\Support\CsvDataImporter;
-use Selene\modules\ApartmentModule\src\Support\StorageAdapter;
+use Selene\Modules\ApartmentModule\Support\CsvDataImporter;
+use Selene\Modules\ApartmentModule\Support\StorageAdapter;
 use Selene\Modules\ApartmentModule\Support\ApartmentStatusesEnum;
 use Selene\Modules\DashboardModule\ZdrojowaTable;
 
@@ -52,7 +52,7 @@ class ApartmentController extends Controller
         $path = StorageAdapter::saveFile($request->file('photo_file'), ApartmentModule::imagesUriPath());
         $request->merge(['image_uri' => $path]);
 
-        $path = StorageAdapter::saveFile($request->file('pdf_file'), ApartmentModule::imagesUriPath());
+        $path = StorageAdapter::saveFile($request->file('pdf_file'), ApartmentModule::pdfUriPath());
         $request->merge(['pdf_uri' => $path]);
 
         $apartment->create($request->all());
@@ -84,13 +84,13 @@ class ApartmentController extends Controller
     public function update(ApartmentUpdateRequest $request, Apartment $apartment)
     {
         if ($request->has('photo_file')) {
-            $path = StorageAdapter::saveFile($request->get('photo_file'), ApartmentModule::imagesUriPath());
+            $path = StorageAdapter::saveFile($request->file('photo_file'), ApartmentModule::imagesUriPath());
 
             $request->merge(['image_uri' => $path]);
         }
 
         if ($request->has('pdf_file')) {
-            $path = StorageAdapter::saveFile($request->get('pdf_file'), ApartmentModule::imagesUriPath());
+            $path = StorageAdapter::saveFile($request->file('pdf_file'), ApartmentModule::pdfUriPath());
 
             $request->merge(['pdf_uri' => $path]);
         }

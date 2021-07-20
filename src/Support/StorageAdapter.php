@@ -1,6 +1,6 @@
 <?php
 
-namespace Selene\modules\ApartmentModule\src\Support;
+namespace Selene\Modules\ApartmentModule\Support;
 
 use Illuminate\Http\UploadedFile;
 

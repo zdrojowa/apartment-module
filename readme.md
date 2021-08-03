@@ -29,8 +29,7 @@ $ composer require zdrojowa/apartment-module
 ],
 
 'crm-apartment' => [
-    'url' => url,
-    'building' => building's number
+    'url' => url
 ],
 ```
 

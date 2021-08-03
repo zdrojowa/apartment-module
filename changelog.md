@@ -10,3 +10,6 @@ All notable changes to `ApartmentModule` will be documented in this file.
 
 ## Version 1.0.2
 - file update bugfix
+
+## Version 1.1.0
+- Add posibilities to load apartments from many buildings and types

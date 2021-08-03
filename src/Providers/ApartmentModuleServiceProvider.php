@@ -11,9 +11,7 @@ class ApartmentModuleServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton(CrmApartmentService::class, function() {
-            return new CrmApartmentService(
-                config('selene.crm-apartment')['url'],
-                config('selene.crm-apartment')['building']);
+            return new CrmApartmentService(config('selene.crm-apartment')['url']);
         });
         $this->app->bind('command.apartment:update', UpdateApartmentsCommand::class);
 

@@ -23,6 +23,8 @@ class Apartment extends Model
         'status',
         'pdf_uri',
         'image_uri',
+        'building_id',
+        'local_type'
     ];
 
     /**

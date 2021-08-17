@@ -75,6 +75,17 @@
                                 </div>
                             </div>
 
+                            <div class="d-flex">
+                                <div class="form-group col-6">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" name="is_marked" @if($apartment->is_marked ?? false) checked @endif>
+                                            Wyraźny <i class="input-helper"></i>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="form-group">
                                 <label for="photo">Plan apartamentu</label>
                                 <input
